@@ -15,5 +15,17 @@ export default $config({
       },
     };
   },
-  async run() {},
+  async run() {
+     const secrets = {
+      GithubClientID: new sst.Secret("GithubClientID"),
+      GithubClientSecret: new sst.Secret("GithubClientSecret"),
+    };
+    const auth = new sst.aws.Auth("Auth", {
+      authorizer: {
+        link: [secrets.GithubClientID, secrets.GithubClientSecret],
+        handler: "./src/auth.handler",
+        url: true,
+      },
+    });
+  },
 });
