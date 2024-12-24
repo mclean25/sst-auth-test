@@ -1,0 +1,140 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      sst:
+        specifier: 3.4.30
+        version: 3.4.30
+    devDependencies:
+      '@types/aws-lambda':
+        specifier: 8.10.146
+        version: 8.10.146
+
+packages:
+
+  '@types/aws-lambda@8.10.146':
+    resolution: {integrity: sha512-3BaDXYTh0e6UCJYL/jwV/3+GRslSc08toAiZSmleYtkAUyV5rtvdPYxrG/88uqvTuT6sb27WE9OS90ZNTIuQ0g==}
+
+  aws4fetch@1.0.20:
+    resolution: {integrity: sha512-/djoAN709iY65ETD6LKCtyyEI04XIBP5xVvfmNxsEP0uJB5tyaGBztSryRr4HqMStr9R06PisQE7m9zDTXKu6g==}
+
+  jose@4.15.9:
+    resolution: {integrity: sha512-1vUQX+IdDMVPj4k8kOxgUqlcK518yluMuGZwqlr44FS1ppZB/5GWh4rZG89erpOBOJjU/OBsnCVFfapsRz6nEA==}
+
+  jose@5.2.3:
+    resolution: {integrity: sha512-KUXdbctm1uHVL8BYhnyHkgp3zDX5KW8ZhAKVFEfUbU2P8Alpzjb+48hHvjOdQIyPshoblhzsuqOwEEAbtHVirA==}
+
+  lru-cache@6.0.0:
+    resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
+    engines: {node: '>=10'}
+
+  object-hash@2.2.0:
+    resolution: {integrity: sha512-gScRMn0bS5fH+IuwyIFgnh9zBdo4DV+6GhygmWM9HyNJSgS0hScp1f5vjtm7oIIOiT9trXrShAkLFSc2IqKNgw==}
+    engines: {node: '>= 6'}
+
+  oidc-token-hash@5.0.3:
+    resolution: {integrity: sha512-IF4PcGgzAr6XXSff26Sk/+P4KZFJVuHAJZj3wgO3vX2bMdNVp/QXTP3P7CEm9V1IdG8lDLY3HhiqpsE/nOwpPw==}
+    engines: {node: ^10.13.0 || >=12.0.0}
+
+  openid-client@5.6.4:
+    resolution: {integrity: sha512-T1h3B10BRPKfcObdBklX639tVz+xh34O7GjofqrqiAQdm7eHsQ00ih18x6wuJ/E6FxdtS2u3FmUGPDeEcMwzNA==}
+
+  sst-darwin-arm64@3.4.30:
+    resolution: {integrity: sha512-y1DBcTwPOX2S3zIIHkv+ugWeI/+u/4Yt5mnX0pr1/we/wGpDFOUum0wREG7F802MGbKhgh0cWgFnm0qFwayHUg==}
+    cpu: [arm64]
+    os: [darwin]
+
+  sst-darwin-x64@3.4.30:
+    resolution: {integrity: sha512-bAj6Zu5Fhnj4A9VVkXY8H5SvF9m2P25X4Wgvys+1RZYFMt47wo0ewbV3IhZKUnxOvhnrjd/u8l8n0EQBq+6cnA==}
+    cpu: [x64]
+    os: [darwin]
+
+  sst-linux-arm64@3.4.30:
+    resolution: {integrity: sha512-HFPNJo8jxjGM1WTjMdkhUMC92wNapQlszUUx/zXEv4HBxNm1lneyGauplqHrAUtRERVKV6O9qZ7YW/n0IXoSCw==}
+    cpu: [arm64]
+    os: [linux]
+
+  sst-linux-x64@3.4.30:
+    resolution: {integrity: sha512-ZyFrjmcvUz7qzZAn/qjW1Em1711Vb3ZO5UwDdgiv5MWV8XuMy9UvnG0WMrPtCqQqwrEexoZ3+WynLoUOLhoOgw==}
+    cpu: [x64]
+    os: [linux]
+
+  sst-linux-x86@3.4.30:
+    resolution: {integrity: sha512-Merqvub35KcWZiIKrzCOPvv33HGVU+/iPQn+zZSkRJntkShAB4Z/wlR+tDQJsuNnH4oyRyXz/Ah4fSq4plEEmA==}
+    cpu: [x86]
+    os: [linux]
+
+  sst@3.4.30:
+    resolution: {integrity: sha512-ibmJZw58BF+Fji58oaZLLs5QxWUJ0B3/fn0QIKRgjstcdqLLAqUNICUjPzyD2OStafFxlaM86zaVg7BoN9WOgg==}
+    hasBin: true
+    peerDependencies:
+      hono: 4.x
+      valibot: 0.30.x
+    peerDependenciesMeta:
+      hono:
+        optional: true
+      valibot:
+        optional: true
+
+  yallist@4.0.0:
+    resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
+
+snapshots:
+
+  '@types/aws-lambda@8.10.146': {}
+
+  aws4fetch@1.0.20: {}
+
+  jose@4.15.9: {}
+
+  jose@5.2.3: {}
+
+  lru-cache@6.0.0:
+    dependencies:
+      yallist: 4.0.0
+
+  object-hash@2.2.0: {}
+
+  oidc-token-hash@5.0.3: {}
+
+  openid-client@5.6.4:
+    dependencies:
+      jose: 4.15.9
+      lru-cache: 6.0.0
+      object-hash: 2.2.0
+      oidc-token-hash: 5.0.3
+
+  sst-darwin-arm64@3.4.30:
+    optional: true
+
+  sst-darwin-x64@3.4.30:
+    optional: true
+
+  sst-linux-arm64@3.4.30:
+    optional: true
+
+  sst-linux-x64@3.4.30:
+    optional: true
+
+  sst-linux-x86@3.4.30:
+    optional: true
+
+  sst@3.4.30:
+    dependencies:
+      aws4fetch: 1.0.20
+      jose: 5.2.3
+      openid-client: 5.6.4
+    optionalDependencies:
+      sst-darwin-arm64: 3.4.30
+      sst-darwin-x64: 3.4.30
+      sst-linux-arm64: 3.4.30
+      sst-linux-x64: 3.4.30
+      sst-linux-x86: 3.4.30
+
+  yallist@4.0.0: {}
