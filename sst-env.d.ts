@@ -10,6 +10,10 @@ declare module "sst" {
       "type": "sst.aws.Auth"
       "url": string
     }
+    "AuthTable": {
+      "name": string
+      "type": "sst.aws.Dynamo"
+    }
     "GithubClientID": {
       "type": "sst.sst.Secret"
       "value": string

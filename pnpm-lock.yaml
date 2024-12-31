@@ -8,9 +8,24 @@ importers:
 
   .:
     dependencies:
+      '@openauthjs/core':
+        specifier: ^0.0.15
+        version: 0.0.15(arctic@2.3.3)(hono@4.6.15)
+      '@openauthjs/openauth':
+        specifier: ^0.2.6
+        version: 0.2.6(arctic@2.3.3)(hono@4.6.15)
+      github:
+        specifier: link:@openauthjs/openauth/adapter/github
+        version: link:@openauthjs/openauth/adapter/github
+      hono:
+        specifier: ^4.6.15
+        version: 4.6.15
       sst:
         specifier: 3.4.30
-        version: 3.4.30
+        version: 3.4.30(hono@4.6.15)(valibot@1.0.0-beta.9)
+      valibot:
+        specifier: 1.0.0-beta.9
+        version: 1.0.0-beta.9
     devDependencies:
       '@types/aws-lambda':
         specifier: 8.10.146
@@ -18,17 +33,60 @@ importers:
 
 packages:
 
+  '@openauthjs/core@0.0.15':
+    resolution: {integrity: sha512-QoVcb+1ZXglKjDxt1Fq16PN4xwImfDlkUKBrZ/zZ6eg11TrK5IUgi3mjm+44t225TVkgZsydp983JhaNxaBg/g==}
+    peerDependencies:
+      arctic: ^2.2.2
+      hono: ^4.0.0
+
+  '@openauthjs/openauth@0.2.6':
+    resolution: {integrity: sha512-KSNlpYmopBwGNV7sMPchlSo7vj4xDT6ifTI3WVyxnGjhf71Jy2labUJ0UyuNAAOYewBpqyP16NNbtBH22sXcrQ==}
+    peerDependencies:
+      arctic: ^2.2.2
+      hono: ^4.0.0
+
+  '@oslojs/asn1@1.0.0':
+    resolution: {integrity: sha512-zw/wn0sj0j0QKbIXfIlnEcTviaCzYOY3V5rAyjR6YtOByFtJiT574+8p9Wlach0lZH9fddD4yb9laEAIl4vXQA==}
+
+  '@oslojs/binary@1.0.0':
+    resolution: {integrity: sha512-9RCU6OwXU6p67H4NODbuxv2S3eenuQ4/WFLrsq+K/k682xrznH5EVWA7N4VFk9VYVcbFtKqur5YQQZc0ySGhsQ==}
+
+  '@oslojs/crypto@1.0.1':
+    resolution: {integrity: sha512-7n08G8nWjAr/Yu3vu9zzrd0L9XnrJfpMioQcvCMxBIiF5orECHe5/3J0jmXRVvgfqMm/+4oxlQ+Sq39COYLcNQ==}
+
+  '@oslojs/encoding@0.4.1':
+    resolution: {integrity: sha512-hkjo6MuIK/kQR5CrGNdAPZhS01ZCXuWDRJ187zh6qqF2+yMHZpD9fAYpX8q2bOO6Ryhl3XpCT6kUX76N8hhm4Q==}
+
+  '@oslojs/encoding@1.1.0':
+    resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
+
+  '@oslojs/jwt@0.2.0':
+    resolution: {integrity: sha512-bLE7BtHrURedCn4Mco3ma9L4Y1GR2SMBuIvjWr7rmQ4/W/4Jy70TIAgZ+0nIlk0xHz1vNP8x8DCns45Sb2XRbg==}
+
+  '@standard-schema/spec@1.0.0-beta.3':
+    resolution: {integrity: sha512-0ifF3BjA1E8SY9C+nUew8RefNOIq0cDlYALPty4rhUm8Rrl6tCM8hBT4bhGhx7I7iXD0uAgt50lgo8dD73ACMw==}
+
   '@types/aws-lambda@8.10.146':
     resolution: {integrity: sha512-3BaDXYTh0e6UCJYL/jwV/3+GRslSc08toAiZSmleYtkAUyV5rtvdPYxrG/88uqvTuT6sb27WE9OS90ZNTIuQ0g==}
 
+  arctic@2.3.3:
+    resolution: {integrity: sha512-f42+wyM0LKNwUY0TV3fSH1Fnsr/klcZi42XfWFvlNP7Ag8aBX92FaKQIU5xBQzxvvy7jg02tF567LsIlmEujKg==}
+
   aws4fetch@1.0.20:
     resolution: {integrity: sha512-/djoAN709iY65ETD6LKCtyyEI04XIBP5xVvfmNxsEP0uJB5tyaGBztSryRr4HqMStr9R06PisQE7m9zDTXKu6g==}
+
+  hono@4.6.15:
+    resolution: {integrity: sha512-OiQwvAOAaI2JrABBH69z5rsctHDzFzIKJge0nYXgtzGJ0KftwLWcBXm1upJC23/omNRtnqM0gjRMbtXshPdqhQ==}
+    engines: {node: '>=16.9.0'}
 
   jose@4.15.9:
     resolution: {integrity: sha512-1vUQX+IdDMVPj4k8kOxgUqlcK518yluMuGZwqlr44FS1ppZB/5GWh4rZG89erpOBOJjU/OBsnCVFfapsRz6nEA==}
 
   jose@5.2.3:
     resolution: {integrity: sha512-KUXdbctm1uHVL8BYhnyHkgp3zDX5KW8ZhAKVFEfUbU2P8Alpzjb+48hHvjOdQIyPshoblhzsuqOwEEAbtHVirA==}
+
+  jose@5.9.6:
+    resolution: {integrity: sha512-AMlnetc9+CV9asI19zHmrgS/WYsWUwCn2R7RzlbJWD7F9eWYUTGyBmU9o6PxngtLGOiDGPRu+Uc4fhKzbpteZQ==}
 
   lru-cache@6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
@@ -82,18 +140,73 @@ packages:
       valibot:
         optional: true
 
+  valibot@1.0.0-beta.9:
+    resolution: {integrity: sha512-yEX8gMAZ2R1yI2uwOO4NCtVnJQx36zn3vD0omzzj9FhcoblvPukENIiRZXKZwCnqSeV80bMm8wNiGhQ0S8fiww==}
+    peerDependencies:
+      typescript: '>=5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
 
 snapshots:
 
+  '@openauthjs/core@0.0.15(arctic@2.3.3)(hono@4.6.15)':
+    dependencies:
+      '@standard-schema/spec': 1.0.0-beta.3
+      arctic: 2.3.3
+      aws4fetch: 1.0.20
+      hono: 4.6.15
+      jose: 5.9.6
+
+  '@openauthjs/openauth@0.2.6(arctic@2.3.3)(hono@4.6.15)':
+    dependencies:
+      '@standard-schema/spec': 1.0.0-beta.3
+      arctic: 2.3.3
+      aws4fetch: 1.0.20
+      hono: 4.6.15
+      jose: 5.9.6
+
+  '@oslojs/asn1@1.0.0':
+    dependencies:
+      '@oslojs/binary': 1.0.0
+
+  '@oslojs/binary@1.0.0': {}
+
+  '@oslojs/crypto@1.0.1':
+    dependencies:
+      '@oslojs/asn1': 1.0.0
+      '@oslojs/binary': 1.0.0
+
+  '@oslojs/encoding@0.4.1': {}
+
+  '@oslojs/encoding@1.1.0': {}
+
+  '@oslojs/jwt@0.2.0':
+    dependencies:
+      '@oslojs/encoding': 0.4.1
+
+  '@standard-schema/spec@1.0.0-beta.3': {}
+
   '@types/aws-lambda@8.10.146': {}
 
+  arctic@2.3.3:
+    dependencies:
+      '@oslojs/crypto': 1.0.1
+      '@oslojs/encoding': 1.1.0
+      '@oslojs/jwt': 0.2.0
+
   aws4fetch@1.0.20: {}
+
+  hono@4.6.15: {}
 
   jose@4.15.9: {}
 
   jose@5.2.3: {}
+
+  jose@5.9.6: {}
 
   lru-cache@6.0.0:
     dependencies:
@@ -125,16 +238,20 @@ snapshots:
   sst-linux-x86@3.4.30:
     optional: true
 
-  sst@3.4.30:
+  sst@3.4.30(hono@4.6.15)(valibot@1.0.0-beta.9):
     dependencies:
       aws4fetch: 1.0.20
       jose: 5.2.3
       openid-client: 5.6.4
     optionalDependencies:
+      hono: 4.6.15
       sst-darwin-arm64: 3.4.30
       sst-darwin-x64: 3.4.30
       sst-linux-arm64: 3.4.30
       sst-linux-x64: 3.4.30
       sst-linux-x86: 3.4.30
+      valibot: 1.0.0-beta.9
+
+  valibot@1.0.0-beta.9: {}
 
   yallist@4.0.0: {}

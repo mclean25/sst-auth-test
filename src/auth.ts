@@ -1,32 +1,38 @@
 import { Resource } from "sst";
 import { auth } from "sst/aws/auth";
-import { GithubAdapter } from "sst/auth/adapter";
+import { GithubAdapter } from "@openauthjs/openauth/adapter/github";
 import { session } from "./session.js";
+import { object, string } from "valibot";
+import { createSubjects } from "@openauthjs/core";
+import { handle } from "hono/aws-lambda";
+import { authorizer } from "@openauthjs/openauth";
+import { DynamoStorage } from "@openauthjs/openauth/storage/dynamo";
 
-export const handler = auth.authorizer({
-  session,
+export const subjects = createSubjects({
+  user: object({
+    email: string(),
+  }),
+});
+
+export const app = authorizer({
+  subjects,
+  storage: DynamoStorage({
+    table: Resource.AuthTable.name
+  }),
   providers: {
     github: GithubAdapter({
       clientID: Resource.GithubClientID.value,
       clientSecret: Resource.GithubClientSecret.value,
-      scope: "user",
+      scopes: ["user"],
     }),
   },
-  callbacks: {
-    auth: {
-      async allowClient(clientID: string, redirect: string) {
-        return true;
-      },
-      async success(ctx, input) {
-        if (input.provider === "github") {
-          return ctx.session({
-            type: "user",
-            properties: {
-              email: input.tokenset.claims().email!,
-            },
-          });
-        }
-      },
-    },
+  success: async (ctx, value, input) => {
+    if (value.provider === "github") {
+      return ctx.subject("user", {
+        email: value.tokenset.access,
+      });
+    }
   },
 });
+
+export const handler = handle(app);

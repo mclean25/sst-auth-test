@@ -20,9 +20,20 @@ export default $config({
       GithubClientID: new sst.Secret("GithubClientID"),
       GithubClientSecret: new sst.Secret("GithubClientSecret"),
     };
+     const authTable = new sst.aws.Dynamo("AuthTable", {
+       fields: {
+         pk: "string",
+         sk: "string",
+       },
+       ttl: "expiry",
+       primaryIndex: {
+         hashKey: "pk",
+         rangeKey: "sk",
+       },
+    });
     const auth = new sst.aws.Auth("Auth", {
       authorizer: {
-        link: [secrets.GithubClientID, secrets.GithubClientSecret],
+        link: [secrets.GithubClientID, secrets.GithubClientSecret, authTable],
         handler: "./src/auth.handler",
         url: true,
       },
